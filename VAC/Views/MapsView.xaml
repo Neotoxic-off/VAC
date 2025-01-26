@@ -11,9 +11,39 @@
         <vm:MapsViewModel/>
     </UserControl.DataContext>
 
-    <StackPanel Orientation="Horizontal">
-        <Label Content="Map:"/>
-        <Label Content="{Binding Map.Name}"/>
-        <Button Content="Randomize" Command="{Binding GenerateCommand}"/>
-    </StackPanel>
+    <Grid>
+        <TabControl>
+            <TabItem Header="Map">
+                <Grid HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+
+                    <DataGrid Grid.Row="0"
+                        AutoGenerateColumns="False" 
+                        VerticalAlignment="Center"
+                        ItemsSource="{Binding Map}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Map" Binding="{Binding Name}" Width="100"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Button Grid.Row="1" Width="100" Height="30" Content="Refresh" Command="{Binding GenerateCommand}"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Settings">
+                <Grid HorizontalAlignment="Center">
+                    <DataGrid AutoGenerateColumns="False" 
+                        VerticalAlignment="Center"
+                        ItemsSource="{Binding Filters}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Map" Binding="{Binding Map.Name}" Width="100"/>
+                            <DataGridCheckBoxColumn Header="Selected" Binding="{Binding Selected}" Width="100"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
 </UserControl>

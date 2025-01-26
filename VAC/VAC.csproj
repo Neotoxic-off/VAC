@@ -35,6 +35,18 @@
     <None Remove="Assets\Characters\Viper.avif" />
     <None Remove="Assets\Characters\Vyse.avif" />
     <None Remove="Assets\Characters\Yoru.avif" />
+    <None Remove="Assets\Icon\Icon.ico" />
+    <None Remove="Assets\Icon\Icon.png" />
+    <None Remove="Assets\Maps\Ascent.avif" />
+    <None Remove="Assets\Maps\Bind.avif" />
+    <None Remove="Assets\Maps\Breeze.avif" />
+    <None Remove="Assets\Maps\Fracture.avif" />
+    <None Remove="Assets\Maps\Haven.avif" />
+    <None Remove="Assets\Maps\Icebox.avif" />
+    <None Remove="Assets\Maps\Lotus.avif" />
+    <None Remove="Assets\Maps\Pearl.avif" />
+    <None Remove="Assets\Maps\Split.avif" />
+    <None Remove="Assets\Maps\Sunset.avif" />
   </ItemGroup>
 
   <ItemGroup>
@@ -68,9 +80,27 @@
     <Resource Include="Assets\Characters\Viper.avif" />
     <Resource Include="Assets\Characters\Vyse.avif" />
     <Resource Include="Assets\Characters\Yoru.avif" />
+    <Resource Include="Assets\Icon\Icon.ico" />
+    <Resource Include="Assets\Icon\Icon.png" />
+    <Resource Include="Assets\Maps\Ascent.avif" />
+    <Resource Include="Assets\Maps\Bind.avif" />
+    <Resource Include="Assets\Maps\Breeze.avif" />
+    <Resource Include="Assets\Maps\Fracture.avif" />
+    <Resource Include="Assets\Maps\Haven.avif" />
+    <Resource Include="Assets\Maps\Icebox.avif" />
+    <Resource Include="Assets\Maps\Lotus.avif" />
+    <Resource Include="Assets\Maps\Pearl.avif" />
+    <Resource Include="Assets\Maps\Split.avif" />
+    <Resource Include="Assets\Maps\Sunset.avif" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\ChallengesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AboutView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\MapsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

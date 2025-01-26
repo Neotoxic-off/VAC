@@ -10,5 +10,6 @@ namespace VAC.Models.Maps
     public class Icebox : IMap
     {
         public string Name { get; set; } = "Icebox";
+        public string Splash { get; set; } = "/Assets/Maps/Icebox.avif";
     }
 }

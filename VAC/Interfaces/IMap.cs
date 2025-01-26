@@ -9,5 +9,6 @@ namespace VAC.Interfaces
     public interface IMap
     {
         public string Name { get; set; }
+        public string Splash { get; set; }
     }
 }

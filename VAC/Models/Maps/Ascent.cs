@@ -10,5 +10,6 @@ namespace VAC.Models.Maps
     public class Ascent : IMap
     {
         public string Name { get; set; } = "Ascent";
+        public string Splash { get; set; } = "/Assets/Maps/Ascent.avif";
     }
 }

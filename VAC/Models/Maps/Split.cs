@@ -10,5 +10,6 @@ namespace VAC.Models.Maps
     public class Split : IMap
     {
         public string Name { get; set; } = "Split";
+        public string Splash { get; set; } = "/Assets/Maps/Split.avif";
     }
 }

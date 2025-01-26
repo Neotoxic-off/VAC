@@ -10,5 +10,6 @@ namespace VAC.Models.Maps
     public class Lotus : IMap
     {
         public string Name { get; set; } = "Lotus";
+        public string Splash { get; set; } = "/Assets/Maps/Lotus.avif";
     }
 }

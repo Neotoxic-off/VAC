@@ -10,5 +10,6 @@ namespace VAC.Models.Maps
     public class Bind : IMap
     {
         public string Name { get; set; } = "Bind";
+        public string Splash { get; set; } = "/Assets/Maps/Bind.avif";
     }
 }

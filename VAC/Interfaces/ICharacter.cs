@@ -10,7 +10,7 @@ namespace VAC.Interfaces
     {
         public enum Types
         {
-            Smoker,
+            Controller,
             Sentinel,
             Duelist,
             Initiator

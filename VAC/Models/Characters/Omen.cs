@@ -11,7 +11,7 @@ namespace VAC.Models.Characters
     {
         public string Name { get; set; } = "Omen";
         public string Splash { get; set; } = "/Assets/Characters/Omen.avif";
-        public ICharacter.Types Type { get; set; } = ICharacter.Types.Smoker;
+        public ICharacter.Types Type { get; set; } = ICharacter.Types.Controller;
     }
 }
 

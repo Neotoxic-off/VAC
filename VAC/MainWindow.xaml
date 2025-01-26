@@ -5,13 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VAC"
         xmlns:views="clr-namespace:VAC.Views"
+        xmlns:vm="clr-namespace:VAC.ViewModels"
         Style="{DynamicResource CustomWindowStyle}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        WindowStyle="ToolWindow"
+        ResizeMode="NoResize"
+        Icon="/Assets/Icon/Icon.ico"
+        Title="{Binding Title}"
+        Height="550"
+        Width="450">
+
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+
     <Grid>
-        <StackPanel>
-            <views:CharactersView/>
-            <views:MapsView/>
-        </StackPanel>
+        <TabControl>
+            <TabItem Header="Map">
+                <views:MapsView/>
+            </TabItem>
+            <TabItem Header="Characters">
+                <views:CharactersView/>
+            </TabItem>
+            <TabItem Header="Challenges">
+                <views:ChallengesView/>
+            </TabItem>
+            <TabItem Header="About">
+                <views:AboutView/>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

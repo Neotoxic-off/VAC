@@ -10,5 +10,6 @@ namespace VAC.Models.Maps
     public class Haven : IMap
     {
         public string Name { get; set; } = "Haven";
+        public string Splash { get; set; } = "/Assets/Maps/Haven.avif";
     }
 }

@@ -10,5 +10,6 @@ namespace VAC.Models.Maps
     public class Fracture : IMap
     {
         public string Name { get; set; } = "Fracture";
+        public string Splash { get; set; } = "/Assets/Maps/Fracture.avif";
     }
 }
