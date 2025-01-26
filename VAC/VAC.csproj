@@ -1,0 +1,79 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Characters\Astra.avif" />
+    <None Remove="Assets\Characters\Breach.avif" />
+    <None Remove="Assets\Characters\Brimstone.avif" />
+    <None Remove="Assets\Characters\Chamber.avif" />
+    <None Remove="Assets\Characters\Clove.avif" />
+    <None Remove="Assets\Characters\Cypher.avif" />
+    <None Remove="Assets\Characters\Deadlock.avif" />
+    <None Remove="Assets\Characters\Fade.avif" />
+    <None Remove="Assets\Characters\Gekko.avif" />
+    <None Remove="Assets\Characters\Harbor.avif" />
+    <None Remove="Assets\Characters\Iso.avif" />
+    <None Remove="Assets\Characters\Jett.avif" />
+    <None Remove="Assets\Characters\Kayo.avif" />
+    <None Remove="Assets\Characters\Killjoy.avif" />
+    <None Remove="Assets\Characters\Neon.avif" />
+    <None Remove="Assets\Characters\Omen.avif" />
+    <None Remove="Assets\Characters\Phoenix.avif" />
+    <None Remove="Assets\Characters\Raze.avif" />
+    <None Remove="Assets\Characters\Reyna.avif" />
+    <None Remove="Assets\Characters\Sage.avif" />
+    <None Remove="Assets\Characters\Skye.avif" />
+    <None Remove="Assets\Characters\Sova.avif" />
+    <None Remove="Assets\Characters\Tejo.avif" />
+    <None Remove="Assets\Characters\Viper.avif" />
+    <None Remove="Assets\Characters\Vyse.avif" />
+    <None Remove="Assets\Characters\Yoru.avif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Characters\Astra.avif" />
+    <Resource Include="Assets\Characters\Breach.avif" />
+    <Resource Include="Assets\Characters\Brimstone.avif" />
+    <Resource Include="Assets\Characters\Chamber.avif" />
+    <Resource Include="Assets\Characters\Clove.avif" />
+    <Resource Include="Assets\Characters\Cypher.avif" />
+    <Resource Include="Assets\Characters\Deadlock.avif" />
+    <Resource Include="Assets\Characters\Fade.avif" />
+    <Resource Include="Assets\Characters\Gekko.avif" />
+    <Resource Include="Assets\Characters\Harbor.avif" />
+    <Resource Include="Assets\Characters\Iso.avif" />
+    <Resource Include="Assets\Characters\Jett.avif" />
+    <Resource Include="Assets\Characters\Kayo.avif" />
+    <Resource Include="Assets\Characters\Killjoy.avif" />
+    <Resource Include="Assets\Characters\Neon.avif" />
+    <Resource Include="Assets\Characters\Omen.avif" />
+    <Resource Include="Assets\Characters\Phoenix.avif" />
+    <Resource Include="Assets\Characters\Raze.avif" />
+    <Resource Include="Assets\Characters\Reyna.avif" />
+    <Resource Include="Assets\Characters\Sage.avif" />
+    <Resource Include="Assets\Characters\Skye.avif" />
+    <Resource Include="Assets\Characters\Sova.avif" />
+    <Resource Include="Assets\Characters\Tejo.avif" />
+    <Resource Include="Assets\Characters\Viper.avif" />
+    <Resource Include="Assets\Characters\Vyse.avif" />
+    <Resource Include="Assets\Characters\Yoru.avif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\MapsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>
