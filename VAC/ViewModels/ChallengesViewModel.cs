@@ -13,8 +13,8 @@ namespace VAC.ViewModels
 {
     partial class ChallengesViewModel : ObservableObject
     {
-        private Random random => new Random();
-        public List<IChallenge> catalog => GetImplementations<IChallenge>();
+        private readonly Random _random = new Random();
+        public List<IChallenge> Catalog => GetImplementations<IChallenge>();
 
         public List<IChallenge> GetImplementations<TInterface>()
         {
@@ -40,22 +40,17 @@ namespace VAC.ViewModels
         [RelayCommand]
         private void Generate()
         {
-            List<int> indexes = Enumerable.Range(0, catalog.Count)
-                .OrderBy(x => random.Next())
+            List<int> indexes = Enumerable.Range(0, Catalog.Count)
+                .OrderBy(_ => _random.Next())
                 .Take(ChallengesCount)
                 .ToList();
-            Challenges = new List<IChallenge>();
 
-            foreach (int index in indexes)
-            {
-                Challenges.Add(catalog[index]);
-            }
+            Challenges = indexes.Select(index => Catalog[index]).ToList();
         }
 
         public ChallengesViewModel()
         {
             ChallengesCount = 3;
-
             Generate();
         }
     }
