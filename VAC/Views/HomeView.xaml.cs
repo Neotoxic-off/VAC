@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace VAC.Views
 {
     /// <summary>
-    /// Interaction logic for AboutView.xaml
+    /// Interaction logic for HomeView.xaml
     /// </summary>
-    public partial class AboutView : UserControl
+    public partial class HomeView : UserControl
     {
-        public AboutView()
+        public HomeView()
         {
             InitializeComponent();
         }

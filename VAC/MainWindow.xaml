@@ -21,6 +21,9 @@
 
     <Grid>
         <TabControl>
+            <TabItem Header="Home">
+                <views:HomeView/>
+            </TabItem>
             <TabItem Header="Map">
                 <views:MapsView/>
             </TabItem>
@@ -29,9 +32,6 @@
             </TabItem>
             <TabItem Header="Challenges">
                 <views:ChallengesView/>
-            </TabItem>
-            <TabItem Header="About">
-                <views:AboutView/>
             </TabItem>
         </TabControl>
     </Grid>
