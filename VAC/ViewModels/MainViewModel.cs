@@ -35,7 +35,7 @@ namespace VAC.ViewModels
 
         public MainViewModel()
         {
-            version = new Version(1, 2, 3);
+            version = new Version(1, 3, 0);
             Title = $"Valorant Assistant Companion {version}";
 
             SoundPlayer();
