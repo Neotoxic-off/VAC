@@ -35,8 +35,7 @@ namespace VAC.ViewModels
 
         private void LoadVersion()
         {
-            Assembly assembly = Assembly.GetExecutingAssembly();
-            Version = assembly.GetName().Version;
+            Version = new Version(0, 1, 1, 2);
         }
 
         public MainViewModel()
