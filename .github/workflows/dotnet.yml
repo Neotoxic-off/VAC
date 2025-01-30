@@ -34,13 +34,10 @@ jobs:
       - name: Create ZIP Archive
         run: Compress-Archive -Path VAC/output/* -DestinationPath release.zip
 
-      - name: Get Latest Commit with 'release' in message
-        id: release_commit
-        run: |
-          commit_message=$(git log -n 1 --pretty=%B)
-          commit_id=$(git log -n 1 --pretty=%H)
-          echo "Commit with 'release' found. Commit ID: $commit_id"
-          echo "TAG_NAME=v${commit_id:0:7}" >> $GITHUB_ENV
+      - name: Get Current Date for Tag
+        id: date
+        run: echo "TAG_NAME=v1.0.$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+        shell: bash
 
       - name: Configure Git User
         run: |
