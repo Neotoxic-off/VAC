@@ -34,12 +34,13 @@ jobs:
       - name: Create ZIP Archive
         run: Compress-Archive -Path VAC/output/* -DestinationPath release.zip
 
-      - name: Get Latest Commit Message
+      - name: Get Latest Commit Message (PowerShell)
         id: commit_message
         run: |
-          commit_message=$(git log -n 1 --pretty=%B)
-          echo "Commit message: $commit_message"
-          echo "TAG_NAME=v1.0.${commit_message// /_}" >> $GITHUB_ENV  # Replaces spaces with underscores to create a valid tag name
+          $commit_message = git log -n 1 --pretty=%B
+          Write-Host "Commit message: $commit_message"
+          $tag_name = "v1.0.$($commit_message -replace ' ', '_')"  # Replace spaces with underscores
+          echo "TAG_NAME=$tag_name" >> $env:GITHUB_ENV
 
       - name: Configure Git User
         run: |
@@ -48,8 +49,8 @@ jobs:
 
       - name: Create and Push Git Tag
         run: |
-          git tag $TAG_NAME
-          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git $TAG_NAME
+          git tag $env:TAG_NAME
+          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git $env:TAG_NAME
         env:
           TAG_NAME: ${{ env.TAG_NAME }}
 
