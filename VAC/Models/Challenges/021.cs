@@ -7,11 +7,11 @@ using VAC.Interfaces;
 
 namespace VAC.Models.Characters
 {
-    public class _006 : IChallenge
+    public class _021 : IChallenge
     {
-        public string Name { get; set; } = "Entire team plays without using tacticals";
+        public string Name { get; set; } = "Players must remain crouched at all times";
         public IChallenge.Types Type { get; set; } = IChallenge.Types.Team;
-        public uint Rounds { get; set; } = 3;
-        public uint Reward { get; set; } = 5;
+        public uint Rounds { get; set; } = 2;
+        public uint Reward { get; set; } = 2;
     }
 }

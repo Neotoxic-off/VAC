@@ -11,7 +11,7 @@ namespace VAC.Models.Characters
     {
         public string Name { get; set; } = "Only ultimates allowed for kills";
         public IChallenge.Types Type { get; set; } = IChallenge.Types.Team;
-        public uint Rounds { get; set; } = 2;
+        public uint Rounds { get; set; } = 1;
         public uint Reward { get; set; } = 5;
     }
 }

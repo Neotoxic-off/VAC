@@ -9,7 +9,7 @@ namespace VAC.Models.Characters
 {
     public class _009 : IChallenge
     {
-        public string Name { get; set; } = "All players with sensitivity at 5";
+        public string Name { get; set; } = "All players with sensitivity at 2";
         public IChallenge.Types Type { get; set; } = IChallenge.Types.Team;
         public uint Rounds { get; set; } = 3;
         public uint Reward { get; set; } = 5;
