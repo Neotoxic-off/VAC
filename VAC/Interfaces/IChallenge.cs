@@ -18,5 +18,6 @@ namespace VAC.Interfaces
         public string Name { get; set; }
         public Types Type { get; set; }
         public uint Rounds { get; set; }
+        public uint Reward { get; set; }
     }
 }
