@@ -21,15 +21,18 @@ jobs:
 
       - name: Restore dependencies
         run: dotnet restore
+        working-directory: VAC
 
       - name: Build Solution
         run: dotnet build --configuration Release --no-restore
+        working-directory: VAC
 
       - name: Publish Application
         run: dotnet publish -c Release -o output
+        working-directory: VAC
 
       - name: Create ZIP Archive
-        run: Compress-Archive -Path output/* -DestinationPath release.zip
+        run: Compress-Archive -Path VAC/output/* -DestinationPath release.zip
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
