@@ -1,4 +1,4 @@
-# VAC v0.1.1.2
+# VAC v1.2.3
 Valorant Assistant Companion
 
 ## Features
