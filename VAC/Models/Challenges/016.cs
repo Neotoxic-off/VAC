@@ -12,5 +12,6 @@ namespace VAC.Models.Characters
         public string Name { get; set; } = "All players must walk during the entire round";
         public IChallenge.Types Type { get; set; } = IChallenge.Types.Team;
         public uint Rounds { get; set; } = 2;
+        public uint Reward { get; set; } = 3;
     }
 }

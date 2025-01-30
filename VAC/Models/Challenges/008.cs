@@ -12,5 +12,6 @@ namespace VAC.Models.Characters
         public string Name { get; set; } = "Designate 3 players to push one site and 2 players the other site";
         public IChallenge.Types Type { get; set; } = IChallenge.Types.Team;
         public uint Rounds { get; set; } = 5;
+        public uint Reward { get; set; } = 2;
     }
 }
