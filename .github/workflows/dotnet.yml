@@ -34,9 +34,22 @@ jobs:
       - name: Create ZIP Archive
         run: Compress-Archive -Path VAC/output/* -DestinationPath release.zip
 
+      - name: Get Current Date
+        id: date
+        run: echo "TAG_NAME=v1.0.$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Create Git Tag
+        run: |
+          git tag $TAG_NAME
+          git push origin $TAG_NAME
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ env.TAG_NAME }}
           files: release.zip
           generate_release_notes: true
         env:
