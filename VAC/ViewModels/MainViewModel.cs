@@ -33,9 +33,16 @@ namespace VAC.ViewModels
             }
         }
 
+        private void LoadVersion()
+        {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            Version = assembly.GetName().Version;
+        }
+
         public MainViewModel()
         {
-            version = new Version(0, 1, 0, 2);
+            LoadVersion();
+
             Title = $"Valorant Assistant Companion {version}";
 
             SoundPlayer();
