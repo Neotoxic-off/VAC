@@ -34,13 +34,13 @@ jobs:
       - name: Create ZIP Archive
         run: Compress-Archive -Path VAC/output/* -DestinationPath release.zip
 
-      - name: Get Latest Commit Message (PowerShell)
-        id: commit_message
+      - name: Read Version from version.txt
+        id: read_version
         run: |
-          $commit_message = git log -n 1 --pretty=%B
-          Write-Host "Commit message: $commit_message"
-          $tag_name = "v1.0.$($commit_message -replace ' ', '_')"  # Replace spaces with underscores
-          echo "TAG_NAME=$tag_name" >> $env:GITHUB_ENV
+          $version = Get-Content "version.txt" | Out-String
+          $version = $version.Trim()
+          echo "VERSION=$version" >> $env:GITHUB_ENV
+        shell: pwsh
 
       - name: Configure Git User
         run: |
@@ -49,15 +49,15 @@ jobs:
 
       - name: Create and Push Git Tag
         run: |
-          git tag $env:TAG_NAME
-          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git $env:TAG_NAME
+          git tag $env:VERSION
+          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git $env:VERSION
         env:
-          TAG_NAME: ${{ env.TAG_NAME }}
+          VERSION: ${{ env.VERSION }}
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ env.TAG_NAME }}
+          tag_name: ${{ env.VERSION }}
           files: release.zip
           generate_release_notes: true
         env:
