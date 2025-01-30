@@ -12,5 +12,6 @@ namespace VAC.Models.Characters
         public string Name { get; set; } = "Everyone picks agents from the same class: Controller";
         public IChallenge.Types Type { get; set; } = IChallenge.Types.Team;
         public uint Rounds { get; set; } = 0;
+        public uint Reward { get; set; } = 2;
     }
 }

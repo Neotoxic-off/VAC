@@ -11,6 +11,7 @@ namespace VAC.Models.Characters
     {
         public string Name { get; set; } = "Pass the spike between all alive players before planting";
         public IChallenge.Types Type { get; set; } = IChallenge.Types.Team;
-        public uint Rounds { get; set; } = 5;
+        public uint Rounds { get; set; } = 2;
+        public uint Reward { get; set; } = 3;
     }
 }

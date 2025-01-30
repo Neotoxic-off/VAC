@@ -12,5 +12,6 @@ namespace VAC.Models.Characters
         public string Name { get; set; } = "Entire team plays without using ultimates";
         public IChallenge.Types Type { get; set; } = IChallenge.Types.Team;
         public uint Rounds { get; set; } = 5;
+        public uint Reward { get; set; } = 2;
     }
 }

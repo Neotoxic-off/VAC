@@ -34,10 +34,12 @@ jobs:
       - name: Create ZIP Archive
         run: Compress-Archive -Path VAC/output/* -DestinationPath release.zip
 
-      - name: Get Current Date for Tag
-        id: date
-        run: echo "TAG_NAME=v1.0.$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
-        shell: bash
+      - name: Get Latest Commit Message
+        id: commit_message
+        run: |
+          commit_message=$(git log -n 1 --pretty=%B)
+          echo "Commit message: $commit_message"
+          echo "TAG_NAME=v1.0.${commit_message// /_}" >> $GITHUB_ENV  # Replaces spaces with underscores to create a valid tag name
 
       - name: Configure Git User
         run: |

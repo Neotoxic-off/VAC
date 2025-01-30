@@ -12,5 +12,6 @@ namespace VAC.Models.Characters
         public string Name { get; set; } = "All players camp a single site while defending";
         public IChallenge.Types Type { get; set; } = IChallenge.Types.Team;
         public uint Rounds { get; set; } = 3;
+        public uint Reward { get; set; } = 5;
     }
 }
