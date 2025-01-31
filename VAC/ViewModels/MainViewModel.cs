@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Media;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -33,12 +34,19 @@ namespace VAC.ViewModels
             }
         }
 
+        private void LoadVersion()
+        {
+            Assembly? assembly = Assembly.GetExecutingAssembly();
+
+            version = assembly?.GetName()?.Version;
+        }
+
         public MainViewModel()
         {
-            version = new Version(1, 3, 0);
-            Title = $"Valorant Assistant Companion {version}";
-
             SoundPlayer();
+            LoadVersion();
+
+            Title = $"Valorant Assistant Companion {version}";
         }
     }
 }
