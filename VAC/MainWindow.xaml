@@ -9,11 +9,12 @@
         Style="{DynamicResource CustomWindowStyle}"
         mc:Ignorable="d"
         WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Icon="/Assets/Icon/Icon.ico"
         Title="{Binding Title}"
-        Height="550"
-        Width="450">
+        Height="650"
+        Width="500">
 
     <Window.DataContext>
         <vm:MainViewModel/>

@@ -16,6 +16,15 @@ namespace VAC.ViewModels
         private readonly Random _random = new Random();
         public List<IChallenge> Catalog => GetImplementations<IChallenge>();
 
+        [ObservableProperty]
+        private List<IChallenge>? _challenges;
+
+        [ObservableProperty]
+        private int _challengesCount;
+
+        [ObservableProperty]
+        private uint _challengesScore;
+
         public List<IChallenge> GetImplementations<TInterface>()
         {
             List<IChallenge> challenges = new List<IChallenge>();
@@ -31,12 +40,6 @@ namespace VAC.ViewModels
             return challenges;
         }
 
-        [ObservableProperty]
-        private List<IChallenge>? _challenges;
-
-        [ObservableProperty]
-        private int _challengesCount;
-
         [RelayCommand]
         private void Generate()
         {
@@ -51,6 +54,7 @@ namespace VAC.ViewModels
         public ChallengesViewModel()
         {
             ChallengesCount = 3;
+
             Generate();
         }
     }
